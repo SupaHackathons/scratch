@@ -4,9 +4,10 @@ var express = require('express');
 var server = express();
 var PORT = process.env.PORT || 3000;
 
-server.get('/', function(req, res) {
-  res.end('Updated server to index.');
-});
 server.listen(PORT, function() {
   console.log('Server listening on', PORT);
+});
+
+server.get('/', function(req, res) {
+  res.sendFile(__dirname + '/app/index.html');
 });
