@@ -11,3 +11,8 @@ server.listen(PORT, function() {
 server.get('/', function(req, res) {
   res.sendFile(__dirname + '/app/index.html');
 });
+
+// Serve up the bundled react components
+server.get('/app.js', function(req, res) {
+  res.sendFile(__dirname + '/dist/bundle.js');
+});
